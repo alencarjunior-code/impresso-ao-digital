@@ -1,0 +1,84 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: url('fundo2.jpg') no-repeat center center fixed; /* Atualizado com caminho correto */
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.7); /* Transparência para o fundo */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0px auto;
+      padding: 20px;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 5px;
+      background-color: #FFFFFF;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -0.8px;
+    }
+    .event {
+      position: relative;
+      background: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade */
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      width: 45%;
+      padding: 20px;
+      margin: 20px 0;
+      cursor: pointer;
+    }
+    .event.left {
+      left: 0;
+    }
+    .event.right {
+      left: 51%;
+    }
+    .event::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: #111;
+      border: 4px solid white;
+      top: 20px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .event.right::before {
+      left: -10px;
+    }
+    .event h2 {
+      margin-top: 0;
+    }
+    .event img, .event video {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      .event {
+        width: 90%;
+        left: 0 !important;
+        margin-left: 50px;
+      }
+      .event.right {
+        left: 0 !important;
+      }
+    }
