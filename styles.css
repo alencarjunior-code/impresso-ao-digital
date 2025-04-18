@@ -95,16 +95,52 @@ header {
 .button-more:hover {
   background-color: #444;
 }
+/* Adicionando estilos responsivos */
 @media screen and (max-width: 768px) {
+  /* Centralizar a linha da timeline na margem esquerda */
   .timeline::after {
-    left: 31px;
+    left: 10px;  /* Ajusta a linha para ficar próxima da margem esquerda */
   }
+
+  /* Ajustando a posição dos círculos para a esquerda, encostados na linha */
+  .event::before {
+    left: -10px; /* Coloca o círculo à esquerda da linha da timeline */
+    right: auto; /* Remove a posição à direita */
+  }
+
+  .event.right::before {
+    left: -10px; /* Garante que o círculo à direita também vá para a esquerda */
+    right: auto; /* Remove a posição à direita */
+  }
+
+  /* Ajustando os eventos para ficarem alinhados à linha */
   .event {
-    width: 90%;
-    left: 0 !important;
-    margin-left: 50px;
+    width: 90%;  /* Largura dos eventos ajustada para dispositivos móveis */
+    position: relative;
+    left: 0;
+    margin-left: 0;
+    margin-bottom: 20px;  /* Espaçamento entre os eventos */
+    top: -15px; /* Faz os eventos iniciarem em cima da linha de forma similar ao PC */
   }
+
+  /* Ajuste para os eventos que aparecem à direita */
   .event.right {
     left: 0 !important;
+  }
+
+  /* Ajuste no tamanho dos eventos e no alinhamento */
+  .event h2 {
+    font-size: 1.2em; /* Ajuste no tamanho do título do evento para telas menores */
+  }
+
+  .event img, .event video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Correção para o alinhamento e espaço entre os círculos e a linha do meio */
+  .timeline::after {
+    left: 10px;  /* Alinha a linha no início, mais à esquerda */
   }
 }
